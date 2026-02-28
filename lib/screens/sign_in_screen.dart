@@ -63,10 +63,10 @@ class _SignInScreenState extends State<SignInScreen> {
                             );
                         log("Success");
                         if (context.mounted) {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
-                            ),
+                          Navigator.of(
+                            context,
+                          ).push(
+                            MaterialPageRoute(builder: (_) => HomeScreen()),
                           );
                         }
                       } catch (e) {

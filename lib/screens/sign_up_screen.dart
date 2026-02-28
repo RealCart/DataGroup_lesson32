@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_sample/screens/home_screen.dart';
 import 'package:firebase_auth_sample/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -61,14 +60,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 'photoUrl': userCredentail.user!.photoURL,
                               },
                             );
-
-                        if (context.mounted) {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
-                            ),
-                          );
-                        }
                       } on FirebaseAuthException catch (e) {
                         log("$e, type: ${e.runtimeType}", name: "Error");
                       }
